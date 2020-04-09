@@ -25,5 +25,8 @@
             <a class="p-2 text-dark" href="logout.php">Logout</a> 
             <a class="p-2 text-dark" href="reset.php">Reset Password</a>
         <?php } ?>
+        <?php if (isset($_SESSION['loggedIn']) && $_SESSION['role'] == "Super Admin") { ?>
+            <a class="p-2 text-dark" href="./admin/create.php">Add User</a>
+        <?php } ?>
     </nav>
 </div>
