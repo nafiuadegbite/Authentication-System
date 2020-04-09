@@ -62,7 +62,7 @@ if ($errorCount > 0) {
         }
 
     save_user($userObject);
-    $_SESSION["message"] = "Registration Successful, you can now login " . $first_name;
+    set_alert('message', "Registration Successful, you can now login " . $first_name);
     header("Location: login.php");
  }
 

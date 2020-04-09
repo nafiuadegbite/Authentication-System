@@ -18,7 +18,7 @@ if(isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn']) && !($_SESSION[
         <p>All Fields are required</p>
     </div>
     <div class="row">
-        <form method="POST" action="processregister.php"> 
+        <form method="POST" action="../processcreate.php"> 
             <p>
                 <?php
                     print_alert();

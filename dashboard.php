@@ -9,6 +9,11 @@ if (!isset($_SESSION['loggedIn'])) {
 
 <div class="container">
     <div class="column">
+        <p>
+            <?php
+                print_alert();
+            ?>
+        </p>
         <h3>Dashboard</h3>
         <hr>
         <p>Welcome, <?php echo $_SESSION['fullname']; ?></p>
