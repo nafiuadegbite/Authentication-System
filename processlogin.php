@@ -46,8 +46,19 @@ if ($errorCount > 0) {
                 $_SESSION['role'] = $currentUser->designation;
                 $_SESSION['date'] = $currentUser->date;
                 $_SESSION['last_login'] = $last_login;
-                redirect_to("dashboard.php");
-                die();
+
+                if($currentUser->designation == "Medical Team (MT)") {
+                    redirect_to("medical.php");
+                    die();
+                }
+                if($currentUser->designation == "Patient"){
+                    redirect_to("patients.php");
+                    die();
+                }
+                if($currentUser->designation == "Super Admin"){
+                    redirect_to("./admin/dashboard.php");
+                    die();
+                }
             } 
         }
     set_alert('error', "Invalid Email or Password");

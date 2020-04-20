@@ -35,7 +35,7 @@ if ($errorCount > 0) {
 
     $session_error .= " in your form submission";
     $_SESSION['error'] = $session_error;
-
+    
     header("Location: register.php");
 } else {
 
@@ -58,7 +58,7 @@ if ($errorCount > 0) {
     $userExists = find_user($email);
     
         if($userExists) {
-            $_SESSION["error"] = "Registration Failed, User already exists";
+            set_alert("error","Registration Failed, User already exists");
             header("Location: create.php");
             die();
         }

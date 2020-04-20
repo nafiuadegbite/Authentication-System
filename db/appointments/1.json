@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "appointment_date": "2020-06-11",
+    "appointment_time": "08:56",
+    "appointment_nature": "Follow-Up Appointment",
+    "department": "Laboratory",
+    "complaint": "Malaria test",
+    "patient_name": "Ade Wasiu"
+}

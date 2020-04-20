@@ -1,8 +1,11 @@
-<?php include_once('lib/header.php');
-    require_once 'functions/alert.php';
+<?php include_once('../lib/header.php');
+    require_once '../functions/alert.php';
 
 if (!isset($_SESSION['loggedIn'])) {
     header("Location: login.php");
+}
+if(isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn']) && !($_SESSION['role'] == "Super Admin")) {
+    header("Location: index.php");
 }
 ?>
 
@@ -33,16 +36,12 @@ if (!isset($_SESSION['loggedIn'])) {
                             </strong>
         </p>
         <p>
-            <?php if (isset($_SESSION['loggedIn']) && $_SESSION['role'] == "Super Admin") { ?>
-            <a class="p-2 text-dark btn btn-success" href="./admin/create.php">Add User</a>
-            <?php } ?>
+            <a class="p-2 text-dark btn btn-success" href="../admin/create.php">Add User</a>
         </p>
         <p>
-            <?php if (isset($_SESSION['loggedIn']) && $_SESSION['role'] == "Patient") { ?>
-            <a class="p-2 text-dark btn btn-bg btn-outline-secondary" href="">Pay Bills</a>
-            <a class="p-2 text-dark btn btn-bg btn-outline-secondary" href="appointment.php">Book Appointment</a>
-            <?php } ?>
+            <a class="p-2 text-dark btn btn-bg btn-outline-secondary" href="../admin/viewstaff.php">View All Staffs</a>
+            <a class="p-2 text-dark btn btn-bg btn-outline-secondary" href="../admin/viewpatient.php">View All Patients</a>
         </p>
     </div>
 </div>
-<?php include_once('lib/footer.php'); ?>
+<?php include_once('../lib/footer.php'); ?>
