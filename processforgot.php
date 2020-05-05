@@ -2,6 +2,7 @@
 require_once 'functions/alert.php';
 require_once 'functions/redirect.php';
 require_once 'functions/token.php';
+require_once 'functions/email.php';
 
 $errorCount = 0;
 
@@ -35,12 +36,12 @@ if($errorCount > 0) {
 
             file_put_contents("db/tokens/". $email . ".json", json_encode(['token'=>$token]));
 
-            send_mail($subject,$message,$email);
+            send_mail($subject, $message,$email);
 
             
             die();
         }
     }
-    set_alert('error',"Email not registered with us ERR: " . $email)
+    set_alert('error', "Email not registered with us ERR: " . $email);
     redirect_to("forgot.php");
 }

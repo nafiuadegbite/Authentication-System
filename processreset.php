@@ -2,6 +2,8 @@
     require_once('functions/user.php');
     require_once('functions/alert.php');
     require_once('functions/redirect.php');
+    require_once('functions/email.php');
+    require_once('functions/token.php');
 //Collecting the data
 
 $errorCount = 0;
